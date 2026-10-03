@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102e36">
+  <title>Min väg framåt | Kompass Företag & Samhälle</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#17323b;background:#f3f5f1;line-height:1.5}
+    *{box-sizing:border-box}body{margin:0}button,input,select,textarea{font:inherit}button{cursor:pointer}
+    a{color:#126d67}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #eea83d;outline-offset:3px}
+    .wrap{width:min(1100px,calc(100% - 32px));margin:auto}.top{background:#102e36;color:white;padding:18px 0}.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:800;letter-spacing:.025em}.brand span{color:#e4b66e}.top small{color:#c4d7d2}
+    .hero{background:linear-gradient(125deg,#143941,#1d655f);color:#fff;padding:60px 0 72px}.eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;font-weight:800;color:#f3c985}.hero h1{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1.06;max-width:760px;margin:12px 0 18px}.hero p{max-width:730px;font-size:1.12rem;color:#e4efeb}.hero .pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}.pill{border:1px solid #86b7ad;border-radius:99px;padding:7px 12px;font-size:.87rem}
+    main{margin-top:-42px;padding-bottom:70px}.panel{background:#fff;border-radius:22px;padding:clamp(22px,4vw,42px);box-shadow:0 16px 42px #173f361b;margin-bottom:18px}.intro{display:flex;justify-content:space-between;gap:22px;align-items:center}.intro p{max-width:680px;color:#51656a}.intro h2,.step h2,.results h2{margin:0 0 8px;font-size:1.65rem}.intro .badge{border-radius:16px;background:#eaf4ed;color:#1b6556;padding:16px 20px;font-weight:800;white-space:nowrap}
+    .progress{height:9px;border-radius:99px;background:#e5ece8;overflow:hidden;margin:18px 0 28px}.progress>div{height:100%;background:#d49b49;transition:width .2s}.stepmark{font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;color:#548176;font-weight:800}.muted{color:#53686c}.field{margin:24px 0}.field>label{display:block;font-weight:750;margin-bottom:9px}.hint{font-size:.9rem;color:#61777b;margin:3px 0 10px}.name{width:min(100%,420px);border:1px solid #aebeba;border-radius:10px;padding:12px;background:#fff}
+    .options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.options label{position:relative}.options input{position:absolute;opacity:0}.options span{display:block;border:1.5px solid #cbd9d4;background:#fbfcfa;border-radius:12px;padding:13px 15px;min-height:54px}.options input:checked+span{background:#e5f3ed;border-color:#29836a;box-shadow:inset 0 0 0 1px #29836a}.options input:focus-visible+span{outline:3px solid #eea83d;outline-offset:2px}
+    textarea{width:100%;min-height:100px;resize:vertical;border:1px solid #aebeba;border-radius:10px;padding:12px}select{max-width:100%;border:1px solid #aebeba;border-radius:10px;padding:10px;background:white}.nav{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:30px}.btn{border:0;border-radius:10px;background:#126b61;color:#fff;padding:12px 20px;font-weight:750}.btn:hover{background:#0d514a}.btn.secondary{background:#e7eeea;color:#1b4944}.btn:disabled{opacity:.45;cursor:not-allowed}.error{color:#9a3e30;font-weight:650;min-height:1.5em}
+    .results{display:none}.results.show{display:block}.lead{font-size:1.1rem;color:#435c60}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:24px 0}.route{border:1px solid #d1e1da;border-radius:16px;padding:20px;background:#fbfdfb}.route h3{margin:0 0 8px}.route .score{font-size:.8rem;color:#1f7361;font-weight:800;text-transform:uppercase;letter-spacing:.07em}.route p{margin:8px 0}.route ol{padding-left:20px}.route li{margin:8px 0}.route.primary{border:2px solid #18826c;background:#eaf5ef}.note{border-left:4px solid #d49b49;background:#fff7e9;padding:16px 20px;border-radius:0 12px 12px 0}.summary{background:#f1f7f3;padding:18px;border-radius:14px}.summary h3{margin:0 0 8px}.summary ul{margin:6px 0;padding-left:20px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.footer{font-size:.85rem;color:#587074;text-align:center;padding:12px 0 35px}
+    @media(max-width:760px){.intro{display:block}.intro .badge{display:inline-block;margin-top:8px}.options,.grid{grid-template-columns:1fr}.hero{padding-top:42px}.top small{display:none}}
+    @media print{.top,.hero,.intro,.step,.actions,.footer{display:none!important}main{margin:0;padding:0}.panel{box-shadow:none;padding:0}.results{display:block!important}.grid{grid-template-columns:repeat(3,1fr)}.route{break-inside:avoid}body{background:white}}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap"><div class="brand">✥ KOMPASS <span>FÖRETAG & SAMHÄLLE</span></div><small>Min väg framåt · arbetsversion</small></div></header>
+  <section class="hero"><div class="wrap"><div class="eyebrow">Utforska dina möjligheter</div><h1>Vad är jag bra på – och vad kan jag göra av det?</h1><p>Prova olika vägar utifrån det du kan, det du vill lära dig och vad som kan efterfrågas. Du får förslag på nästa steg som går att testa på riktigt.</p><div class="pills"><span class="pill">Arbete</span><span class="pill">Utbildning</span><span class="pill">Eget företag</span><span class="pill">Cirka 5 minuter</span></div></div></section>
+  <main class="wrap">
+    <section class="panel intro"><div><h2>Din egen utforskning</h2><p>Svara utifrån hur det är för dig just nu. Det finns inga rätt eller fel svar. Resultatet är ett samtalsunderlag och du väljer själv vad du vill pröva vidare.</p></div><div class="badge">Dina svar stannar i den här webbläsarfliken</div></section>
+    <section class="panel step" id="stepPanel" aria-live="polite"><div class="stepmark" id="stepMark"></div><div class="progress" aria-label="Framsteg"><div id="progressBar"></div></div><h2 id="stepTitle"></h2><p class="muted" id="stepIntro"></p><div id="questions"></div><p class="error" id="error" role="alert"></p><div class="nav"><button type="button" class="btn secondary" id="back">Tillbaka</button><button type="button" class="btn" id="next">Nästa</button></div></section>
+    <section class="panel results" id="results" aria-live="polite"></section>
+  </main>
+  <footer class="footer wrap">Kompass Företag & Samhälle · Ett utforskande verktyg, inte ett test av människors värde eller ett beslut om lämplighet.</footer>
+  <script>
+    "use strict";
+    const steps = [
+      {title:"Det du redan kan",intro:"Vi börjar med erfarenhet och sådant andra brukar be dig om hjälp med.",items:[
+        {id:"name",type:"text",label:"Vad vill du kallas?",optional:true,placeholder:"Förnamn (frivilligt)"},
+        {id:"skills",type:"multi",label:"Vilka områden har du erfarenhet av eller intresse för?",hint:"Välj upp till fyra. Erfarenhet från arbete, hem, förening och andra länder räknas.",max:4,options:["Praktiskt arbete och reparation","Bygg och fastighet","Mat och service","Transport och logistik","Vård och omsorg","Språk och kommunikation","Administration och ekonomi","Digitala verktyg","Försäljning och kundkontakt","Undervisning och handledning","Odling och natur","Skapande och hantverk"]},
+        {id:"strength",type:"single",label:"När känner du att du gör ett bra jobb?",options:["När jag får lösa ett praktiskt problem","När jag hjälper eller förklarar för någon","När jag planerar och skapar ordning","När jag hittar nya idéer och möjligheter"]}
+      ]},
+      {title:"Så vill du arbeta",intro:"Det här hjälper oss att jämföra möjliga arbetsmiljöer.",items:[
+        {id:"setting",type:"single",label:"Vilken vardag lockar mest just nu?",options:["Tydliga arbetsuppgifter i ett team","Variation och kontakt med olika människor","Självständigt arbete med eget ansvar","Jag behöver prova mig fram"]},
+        {id:"pace",type:"single",label:"Hur vill du börja?",options:["Söka ett arbete snart","Praktik eller kort uppdrag för att testa","Utbildning eller validering först","Undersöka om en affärsidé fungerar"]},
+        {id:"time",type:"single",label:"Hur mycket tid kan du realistiskt lägga på ett nytt steg nu?",options:["Några timmar i veckan","Halvtid ungefär","Heltid ungefär","Jag vet inte ännu"]}
+      ]},
+      {title:"Företagsidé och verklighet",intro:"En idé blir tydligare när den möter verkliga behov.",items:[
+        {id:"idea",type:"textarea",label:"Om du har en idé: vilken tjänst eller produkt skulle du vilja erbjuda?",optional:true,placeholder:"Skriv några ord. Lämna tomt om du vill utforska arbete eller utbildning först."},
+        {id:"customer",type:"single",label:"Vet du vem som skulle kunna köpa det du erbjuder?",options:["Ja, jag har pratat med möjliga kunder","Jag har en tänkt kundgrupp men inte testat","Nej, det behöver jag undersöka","Jag har ingen affärsidé just nu"]},
+        {id:"firstSale",type:"single",label:"Har någon redan betalat för det du vill erbjuda?",options:["Ja","Nej, men någon har visat konkret intresse","Nej","Inte aktuellt för mig"]}
+      ]},
+      {title:"Vad behöver prövas?",intro:"Välj hinder och resurser som påverkar ditt nästa steg.",items:[
+        {id:"barrier",type:"multi",label:"Vad skulle hjälpa dig mest just nu?",hint:"Välj upp till tre.",max:3,options:["Få min erfarenhet tydligt beskriven","Hitta arbetsgivare eller uppdrag","Träna yrkessvenska","Validera eller komplettera utbildning","Undersöka kunder och efterfrågan","Förstå regler, tillstånd och skatt","Räkna på pris och ekonomi","Hitta en samarbetspartner","Anpassa arbetstid och upplägg","Jag vet inte ännu"]},
+        {id:"support",type:"single",label:"Vilken kontakt har du redan?",options:["Arbetsgivare eller uppdragsgivare","Möjliga kunder","Rådgivare eller utbildare","Ingen ännu"]},
+        {id:"choice",type:"single",label:"Vilket spår vill du helst börja utforska?",options:["Arbete","Eget företag","Utbildning","Jag vill jämföra alla tre"]}
+      ]}
+    ];
+    const state={step:0,answers:{}};
+    const $=id=>document.getElementById(id);
+    const escapeHTML=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
+    function render(){
+      const s=steps[state.step];$("stepMark").textContent=`Steg ${state.step+1} av ${steps.length}`;$("progressBar").style.width=`${(state.step+1)/steps.length*100}%`;
+      $("stepTitle").textContent=s.title;$("stepIntro").textContent=s.intro;$("error").textContent="";
+      $("questions").innerHTML=s.items.map(q=>{
+        const current=state.answers[q.id];let control="";
+        if(q.type==="text")control=`<input class="name" id="${q.id}" type="text" maxlength="60" autocomplete="off" placeholder="${escapeHTML(q.placeholder)}" value="${escapeHTML(current||"")}">`;
+        if(q.type==="textarea")control=`<textarea id="${q.id}" maxlength="300" placeholder="${escapeHTML(q.placeholder)}">${escapeHTML(current||"")}</textarea>`;
+        if(q.type==="single"||q.type==="multi")control=`<div class="options" role="group" aria-label="${escapeHTML(q.label)}">${q.options.map((v,i)=>`<label><input type="${q.type==="single"?"radio":"checkbox"}" name="${q.id}" value="${escapeHTML(v)}" ${q.type==="single"?current===v?"checked":"":Array.isArray(current)&&current.includes(v)?"checked":""}><span>${escapeHTML(v)}</span></label>`).join("")}</div>`;
+        return `<div class="field"><label ${q.type==="text"||q.type==="textarea"?`for="${q.id}"`:""}>${escapeHTML(q.label)}${q.optional?" <small class='muted'>(frivilligt)</small>":""}</label>${q.hint?`<p class="hint">${escapeHTML(q.hint)}</p>`:""}${control}</div>`;
+      }).join("");$("back").disabled=state.step===0;$("next").textContent=state.step===steps.length-1?"Visa mina vägar":"Nästa";
+    }
+    function collect(){
+      const s=steps[state.step];for(const q of s.items){let value;
+        if(q.type==="text"||q.type==="textarea")value=$(q.id).value.trim();
+        else if(q.type==="single")value=document.querySelector(`input[name="${q.id}"]:checked`)?.value;
+        else value=[...document.querySelectorAll(`input[name="${q.id}"]:checked`)].map(el=>el.value);
+        if(!q.optional&&(!value||(Array.isArray(value)&&!value.length))){$("error").textContent=`Svara på: ${q.label}`;return false;}
+        if(q.max&&value.length>q.max){$("error").textContent=`Välj högst ${q.max} alternativ under: ${q.label}`;return false;}
+        state.answers[q.id]=value;
+      }return true;
+    }
+    $("next").addEventListener("click",()=>{if(!collect())return;if(state.step<steps.length-1){state.step++;render();$("stepPanel").scrollIntoView({behavior:"smooth"});}else showResults();});
+    $("back").addEventListener("click",()=>{collect();if(state.step>0){state.step--;render();$("stepPanel").scrollIntoView({behavior:"smooth"});}});
+    function add(list,text){if(!list.includes(text))list.push(text);}
+    function evaluate(){
+      const a=state.answers,scores={work:0,business:0,learn:0},why={work:[],business:[],learn:[]};
+      if(a.pace==="Söka ett arbete snart"){scores.work+=3;add(why.work,"Du vill söka arbete snart.");}
+      if(a.pace==="Praktik eller kort uppdrag för att testa"){scores.work+=2;scores.learn+=1;add(why.work,"Du vill pröva ett uppdrag eller en arbetsplats.");}
+      if(a.pace==="Utbildning eller validering först"){scores.learn+=3;add(why.learn,"Du vill utveckla eller validera kompetens först.");}
+      if(a.pace==="Undersöka om en affärsidé fungerar"){scores.business+=2;add(why.business,"Du vill undersöka en affärsidé.");}
+      if(a.setting==="Tydliga arbetsuppgifter i ett team")scores.work+=2;
+      if(a.setting==="Självständigt arbete med eget ansvar")scores.business+=1;
+      if(a.idea){scores.business+=1;add(why.business,"Du har beskrivit en möjlig tjänst eller produkt.");}
+      if(a.customer==="Ja, jag har pratat med möjliga kunder"){scores.business+=2;add(why.business,"Du har redan pratat med möjliga kunder.");}
+      if(a.customer==="Jag har en tänkt kundgrupp men inte testat")scores.business+=1;
+      if(a.firstSale==="Ja"){scores.business+=3;add(why.business,"Någon har redan betalat för det du erbjuder.");}
+      if(a.firstSale==="Nej, men någon har visat konkret intresse"){scores.business+=1;add(why.business,"Du har fått ett konkret kundintresse.");}
+      if(a.support==="Arbetsgivare eller uppdragsgivare"){scores.work+=2;add(why.work,"Du har kontakt med en arbetsgivare eller uppdragsgivare.");}
+      if(a.support==="Möjliga kunder")scores.business+=1;
+      if(a.barrier.includes("Validera eller komplettera utbildning")){scores.learn+=2;add(why.learn,"Du har pekat ut validering eller utbildning som viktigt.");}
+      if(a.barrier.includes("Träna yrkessvenska")){scores.learn+=1;add(why.learn,"Yrkessvenska kan stärka fler vägar framåt.");}
+      if(a.barrier.includes("Hitta arbetsgivare eller uppdrag"))scores.work+=1;
+      if(a.barrier.includes("Undersöka kunder och efterfrågan")||a.barrier.includes("Räkna på pris och ekonomi"))scores.business+=1;
+      if(a.choice==="Arbete")scores.work+=2;
+      if(a.choice==="Eget företag")scores.business+=2;
+      if(a.choice==="Utbildning")scores.learn+=2;
+      return {scores,why};
+    }
+    function showResults(){
+      const a=state.answers,{scores,why}=evaluate();const routes=[
+        {key:"work",title:"Arbete eller uppdrag",desc:"Pröva din kompetens mot en verklig arbetsuppgift och en arbetsgivare.",steps:[`Beskriv två saker du kan göra inom ${a.skills[0]?.toLowerCase()||"ditt område"}.`,`Välj en typ av arbetsplats eller uppdrag att kontakta.`,`Be om ett samtal eller ett avgränsat sätt att visa din kompetens.`]},
+        {key:"business",title:"Eget företag",desc:"Pröva om någon vill köpa ett tydligt erbjudande och om ekonomin fungerar.",steps:[a.idea?`Skriv om din idé till ett erbjudande: ”Jag hjälper [kund] med ${a.idea.slice(0,75)}”.`:`Välj ett konkret problem du kan lösa för en möjlig kund.`,`Prata med minst tre möjliga kunder om deras behov innan du bestämmer dig.`,`Räkna på pris, kostnader, regler och den tid du kan lägga.`]},
+        {key:"learn",title:"Utbildning eller validering",desc:"Ta reda på vad du redan kan och vad som behöver kompletteras.",steps:[`Samla exempel på arbete du gjort inom ${a.skills[0]?.toLowerCase()||"ditt område"}.`,`Undersök om din erfarenhet kan valideras eller om en kort utbildning passar.`,`Välj en utbildare eller vägledare och ställ tre konkreta frågor.`]}
+      ].sort((x,y)=>scores[y.key]-scores[x.key]);
+      const top=routes[0];const uncertain=routes.length>1&&scores[top.key]-scores[routes[1].key]<=1;
+      const name=a.name?`${escapeHTML(a.name)}: `:"";
+      const reasons=why[top.key].length?why[top.key]:["Du har valt att utforska detta spår tillsammans med de andra alternativen."];
+      const barriers=a.barrier.filter(x=>x!=="Jag vet inte ännu");
+      $("results").innerHTML=`<div class="stepmark">Ditt personliga samtalsunderlag</div><h2>${name}Tre vägar att pröva</h2><p class="lead">${uncertain?"Två spår ligger nära varandra. Börja gärna med ett litet test av båda.":`Börja med att undersöka ${top.title.toLowerCase()}. De andra spåren är också möjliga.`} Det här är förslag utifrån dina egna svar, inte en bedömning av din förmåga.</p><div class="summary"><h3>Det du tar med dig</h3><ul><li><strong>Erfarenhet/intresse:</strong> ${escapeHTML(a.skills.join(", "))}</li><li><strong>Du vill börja med:</strong> ${escapeHTML(a.pace.toLowerCase())}</li><li><strong>Du efterfrågar stöd med:</strong> ${escapeHTML(barriers.join(", ")||"att ringa in nästa steg")}</li>${a.idea?`<li><strong>Din idé:</strong> ${escapeHTML(a.idea)}</li>`:""}</ul></div><div class="grid">${routes.map((r,i)=>`<article class="route ${i===0?"primary":""}"><div class="score">${i===0?"Föreslaget första spår":"Alternativt spår"}</div><h3>${r.title}</h3><p>${r.desc}</p>${i===0?`<p><strong>Varför?</strong> ${escapeHTML(reasons.join(" "))}</p>`:""}<h4>Pröva i verkligheten</h4><ol>${r.steps.map(x=>`<li>${escapeHTML(x)}</li>`).join("")}</ol></article>`).join("")}</div><div class="note"><strong>Nästa samtal:</strong> Ta med detta underlag till en rådgivare, arbetsgivare eller utbildare. Kontrollera efterfrågan, regler, ekonomi och dina egna förutsättningar innan du fattar beslut. Du kan ändra riktning när du lär dig mer.</div><div class="actions"><button class="btn" type="button" id="print">Skriv ut eller spara som PDF</button><button class="btn secondary" type="button" id="edit">Ändra svar</button><button class="btn secondary" type="button" id="restart">Börja om</button></div>`;
+      $("stepPanel").hidden=true;$("results").classList.add("show");$("results").scrollIntoView({behavior:"smooth"});
+      $("print").addEventListener("click",()=>window.print());
+      $("edit").addEventListener("click",()=>{$("results").classList.remove("show");$("stepPanel").hidden=false;render();$("stepPanel").scrollIntoView({behavior:"smooth"});});
+      $("restart").addEventListener("click",()=>{state.step=0;state.answers={};$("results").classList.remove("show");$("stepPanel").hidden=false;render();$("stepPanel").scrollIntoView({behavior:"smooth"});});
+    }
+    render();
+  </script>
+</body>
+</html>
