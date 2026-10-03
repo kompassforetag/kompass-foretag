@@ -103,7 +103,8 @@
       ]}
     ];
     const state={step:0,answers:{}};
-    let lang="sv";
+    const requestedLanguage=new URLSearchParams(window.location.search).get("lang");
+    let lang=["sv","ar","en","so","fa","uk"].includes(requestedLanguage)?requestedLanguage:"sv";
     const $=id=>document.getElementById(id);
     const escapeHTML=value=>String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c]);
     const I=()=>localeData[lang];
@@ -217,7 +218,7 @@
       $("edit").addEventListener("click",()=>{$("results").classList.remove("show");$("stepPanel").hidden=false;render();$("stepPanel").scrollIntoView({behavior:"smooth"});});
       $("restart").addEventListener("click",()=>{state.step=0;state.answers={};$("results").classList.remove("show");$("stepPanel").hidden=false;render();$("stepPanel").scrollIntoView({behavior:"smooth"});});
     }
-    updateLanguage();render();
+    $("language").value=lang;updateLanguage();render();
   </script>
 </body>
 </html>
