@@ -235,7 +235,7 @@
       $("stepPanel").hidden=true;$("results").classList.add("show");$("results").scrollIntoView({behavior:"smooth"});
       $("print").addEventListener("click",()=>window.print());
       $("edit").addEventListener("click",()=>{$("results").classList.remove("show");$("stepPanel").hidden=false;render();$("stepPanel").scrollIntoView({behavior:"smooth"});});
-      $("restart").addEventListener("click",()=>{state.step=0;state.answers={};$("results").classList.remove("show");$("stepPanel").hidden=false;render();$("stepPanel").scrollIntoView({behavior:"smooth"});});
+      $("restart").addEventListener("click",()=>{state.step=0;state.answers={};testStarted=false;testCompleted=false;$("results").classList.remove("show");$("stepPanel").hidden=false;render();$("stepPanel").scrollIntoView({behavior:"smooth"});});
     }
     $("language").value=lang;updateLanguage();render();
   </script>
