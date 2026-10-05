@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#102e36">
-  <!-- Sätt content till webbplatsens GA4-mät-ID (G-...) när statistiken är ansluten. -->
-  <meta name="analytics-measurement-id" content="">
+
   <title>Min väg framåt | Kompass Företag & Samhälle</title>
   <style>
     :root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#17323b;background:#f3f5f1;line-height:1.5}
@@ -31,24 +30,22 @@
     <section class="panel step" id="stepPanel" aria-live="polite"><div class="stepmark" id="stepMark"></div><div class="progress" aria-label="Framsteg"><div id="progressBar"></div></div><h2 id="stepTitle"></h2><p class="muted" id="stepIntro"></p><div id="questions"></div><p class="error" id="error" role="alert"></p><div class="nav"><button type="button" class="btn secondary" id="back">Tillbaka</button><button type="button" class="btn" id="next">Nästa</button></div></section>
     <section class="panel results" id="results" aria-live="polite"></section>
   </main>
-  <footer class="footer wrap" id="footerText">Kompass Företag & Samhälle · Förslag att prova, inte ett beslut om dig.</footer>
+  <footer class="footer wrap"><span id="footerText">Kompass Företag & Samhälle · Förslag att prova, inte ett beslut om dig.</span> · <a href="integritet.html">Integritet</a></footer>
+  <script data-goatcounter="https://kompassforetag.goatcounter.com/count" data-goatcounter-settings='{"path":"/simulator.html"}' async src="https://gc.zgo.at/count.js" onload="window.flushTestEvents?.()"></script>
   <script>
     "use strict";
-    const measurementId=document.querySelector('meta[name="analytics-measurement-id"]')?.content.trim();
-    if(/^G-[A-Z0-9]+$/.test(measurementId||"")){
-      window.dataLayer=window.dataLayer||[];
-      window.gtag=function(){dataLayer.push(arguments);};
-      gtag("js",new Date());
-      gtag("config",measurementId,{send_page_view:true});
-      const analyticsScript=document.createElement("script");
-      analyticsScript.async=true;
-      analyticsScript.src="https://www.googletagmanager.com/gtag/js?id="+encodeURIComponent(measurementId);
-      document.head.appendChild(analyticsScript);
-    }
+    const pendingTestEvents=[];
+    window.flushTestEvents=function(){
+      if(typeof window.goatcounter?.count!=="function")return;
+      while(pendingTestEvents.length){
+        const eventName=pendingTestEvents.shift();
+        window.goatcounter.count({path:eventName,title:eventName==="simulator-start"?"Test påbörjat":"Test slutfört",event:true,no_session:true});
+      }
+    };
     let testStarted=false,testCompleted=false;
-    function trackTest(eventName){if(typeof window.gtag==="function")window.gtag("event",eventName);}
-    function markStarted(){if(!testStarted){testStarted=true;trackTest("simulator_start");}}
-    function markCompleted(){if(!testCompleted){testCompleted=true;trackTest("simulator_complete");}}
+    function trackTest(eventName){pendingTestEvents.push(eventName);window.flushTestEvents();}
+    function markStarted(){if(!testStarted){testStarted=true;trackTest("simulator-start");}}
+    function markCompleted(){if(!testCompleted){testCompleted=true;trackTest("simulator-complete");}}
     const localeData={
       en:{
         hero:["Language","Find your way","What are you good at?","It can be hard to see your own strengths. Answer simple questions about everyday life. Get ideas to try.","Work","Learning","Your own business","About 7 minutes","Start here","There are no right or wrong answers. You decide what to try. You can show the result to an adviser or someone you trust.","Your answers stay in this browser tab","Kompass Företag & Samhälle · Ideas to try, not a decision about you."],
