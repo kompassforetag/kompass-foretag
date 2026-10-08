@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://kompassforetag.github.io/kompass-foretag/</loc>
-  </url>
+  <url><loc>https://kompassforetag.se/</loc></url>
+  <url><loc>https://kompassforetag.se/hitta-din-vag.html</loc></url>
+  <url><loc>https://kompassforetag.se/starta-foretag.html</loc></url>
+  <url><loc>https://kompassforetag.se/foretag.html</loc></url>
+  <url><loc>https://kompassforetag.se/foretagsutveckling.html</loc></url>
+  <url><loc>https://kompassforetag.se/arbete-etablering.html</loc></url>
+  <url><loc>https://kompassforetag.se/boendedialog.html</loc></url>
+  <url><loc>https://kompassforetag.se/hallbart-samhalle.html</loc></url>
+  <url><loc>https://kompassforetag.se/kommuner-myndigheter.html</loc></url>
+  <url><loc>https://kompassforetag.se/om-kompass.html</loc></url>
+  <url><loc>https://kompassforetag.se/kontakta-oss.html</loc></url>
+  <url><loc>https://kompassforetag.se/rusta-och-matcha.html</loc></url>
+  <url><loc>https://kompassforetag.se/simulator.html</loc></url>
+  <url><loc>https://kompassforetag.se/integritet.html</loc></url>
 </urlset>
