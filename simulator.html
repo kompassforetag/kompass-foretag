@@ -257,3 +257,5 @@ $("language").value=lang;updateLanguage();render();
 </body>
 </html>
 
+
+<script>document.addEventListener('click',function(e){const a=e.target.closest('a');if(!a)return;const href=a.getAttribute('href')||'';if(!href.startsWith('mailto:'))return;e.preventDefault();const body=new URLSearchParams(href.split('?')[1]||'').get('body')||'';try{sessionStorage.setItem('kompassContactDraft',body);}catch{}location.href='kontakta-oss.html?lang='+document.documentElement.lang;});</script>
